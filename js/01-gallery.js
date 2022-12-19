@@ -23,6 +23,7 @@ const galleryItemsMurkup = createGalleryItemsMurkup(galleryItems);
 galleryEl.innerHTML = galleryItemsMurkup;
 
 function onImgClick(event) {
+  event.preventDefault();
   if (event.target.nodeName !== "IMG") {
     return;
   }
@@ -32,10 +33,11 @@ function onImgClick(event) {
 `);
 
   instance.show();
+  galleryEl.addEventListener("keydown", (event) => {
+    if (event.code === `Escape`) {
+      instance.close();
+    }
+  });
 }
-galleryEl.addEventListener("keydown", function (event) {
-  if (event.code === "Escape") {
-    instance.close();
-  }
-});
+
 galleryEl.addEventListener("click", onImgClick);

@@ -20,7 +20,6 @@ function createGalleryItemsMurkup(items) {
 const galleryItemsMurkup = createGalleryItemsMurkup(galleryItems);
 galleryEl.innerHTML = galleryItemsMurkup;
 
-const imgEl = document.querySelector(`img`);
 var lightbox = new SimpleLightbox(".gallery a", {
   captionsData: `alt`,
   scrollZoomFactor: 0.1,
